@@ -1,0 +1,12 @@
+﻿@model HomeViewModel;
+@{
+    ViewData["Title"] = "Rover's Picture of the Day!";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Picture of the Day</h1>
+    <h2>@Model.Rover   -   @Model.Camera </h2>
+     Date: @Model.Date.ToShortDateString() - Refresh the page to obtain a new image <br/>
+    <img src="@(Model.Url ?? "/pics/notfound.jpg")" width="70%"/>
+</div>

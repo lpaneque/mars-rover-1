@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  marsroverpics:
+    image: ${DOCKER_REGISTRY-}marsroverpics
+    build:
+      context: .
+      dockerfile: MarsRoverPics/Dockerfile
