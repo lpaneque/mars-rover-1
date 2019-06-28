@@ -4,19 +4,19 @@ This web application will launch a single page that will show one random picture
 
 The application is built using ASPNET CORE MVC, C#. The unit test project is built using xUnit, Moq, Coverlet and AutoFixture. All dependencies are nuget packages.
 
-Images will be stored locally after first download and calls to NASA Rover API will be cached in memory.
+Images will be stored locally after the first download and all calls to NASA Rover API will be cached in memory for 1 hour.
 
-Configuration is donde via appsettings.json file.
+Configuration is done via appsettings.json file.
 
 NOTES
-- If dates in the appsettings.json file are incorrect, they will be ignored, if no dates are valid, the application will fail.
-- The appsettings.json file contains a section where the url and api key for the NASA rover API is configured.
+- If dates in the appsettings.json file are incorrect, they will be ignored, if no dates are valid the application will fail.
+- The appsettings.json file contains a section where the url and api key for the NASA rover API are configured.
 - In the case of a fatal error downloading the image from NASA servers - ONLY in that case - the application will use the original link from the API.
 - If the given combination of rover and date does not yield any photos, a "not found" image will be shown instead.
 
 ## Requirements
 
-This solution was implemented in C# and NETCORE and can be built from Visual Studio or just from a system with Docker (any platform)
+This solution was implemented in C# and NETCORE and can be built from Visual Studio,a machine with NETCORE SDK or just from a system with Docker (any platform)
 
 ### with Visual Studio on Windows Machine
 
@@ -46,7 +46,7 @@ From the root directory of the solution, run:
 $ docker build . -t rover
 ```
 
-After the image is built, the run it with:
+After the image is built, then run it with:
 
 ```sh
 $ docker run -p 8887:5300 rover
